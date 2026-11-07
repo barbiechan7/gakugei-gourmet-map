@@ -109,7 +109,7 @@
   });
 
   // genre chips
-  const genres = ['すべて', ...Array.from(new Set(SHOPS.map(s=>s.genre)))];
+  const genres = ['すべて','和食','洋食','中華','スイーツ・カフェ'];
   let genre = 'すべて', current = null;
   function renderChips(){
     $('#chips').innerHTML = genres.map(g=>`<button class="chip" aria-pressed="${g===genre}" data-g="${esc(g)}">${esc(g)}</button>`).join('');
@@ -128,7 +128,7 @@
     current=null; setActive(null);
     const v=visible();
     $('#body').innerHTML = `<div class="count">${v.length}件のお店</div><ul class="list">`+
-      v.map(s=>`<li><button class="item" data-id="${s.id}"><span class="num">${s.no}</span><span><b>${esc(s.name)}</b><small><span class="tag">${esc(s.genre)}</span>${esc(s.catch)}</small></span></button></li>`).join('')+`</ul>`;
+      v.map(s=>`<li><button class="item" data-id="${s.id}"><span class="num">${s.no}</span><span><b>${esc(s.name)}</b><small><span class="tag">${esc(s.kind||s.genre)}</span>${esc(s.catch)}</small></span></button></li>`).join('')+`</ul>`;
     $('#body').querySelectorAll('.item').forEach(b=>b.onclick=()=>select(b.dataset.id,true));
     $('#body').scrollTop=0;
   }

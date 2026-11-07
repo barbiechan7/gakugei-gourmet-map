@@ -5,7 +5,7 @@ window.SHOPS = [
  {
   "id": "rondo",
   "name": "炭火肴 ロンド",
-  "genre": "居酒屋",
+  "genre": "和食",
   "catch": "大人の隠れ家居酒屋🍶",
   "desc": "炭火でじっくり焼き上げる料理が自慢。落ち着いた店内で、デートや仕事帰りの一杯にも。",
   "address": "東京都目黒区鷹番2丁目19-5 フローラルアーツ2階",
@@ -17,7 +17,8 @@ window.SHOPS = [
   "reels": [
    "Del50plBLd7"
   ],
-  "pr": false
+  "pr": false,
+  "kind": "居酒屋"
  },
  {
   "id": "shanghai",
@@ -34,12 +35,13 @@ window.SHOPS = [
   "reels": [
    "DeeMUChhMTn"
   ],
-  "pr": false
+  "pr": false,
+  "kind": "中華"
  },
  {
   "id": "alleycats",
   "name": "ALLEY CATS",
-  "genre": "カフェ",
+  "genre": "洋食",
   "catch": "元100円ショップをリノベしたアメリカンダイナー✨",
   "desc": "平日8時には行列も。開店5分前の到着がおすすめ。",
   "address": "東京都目黒区祐天寺1-23-19",
@@ -53,12 +55,13 @@ window.SHOPS = [
   "reels": [
    "DdLsQBaBPTt"
   ],
-  "pr": false
+  "pr": false,
+  "kind": "ダイナー"
  },
  {
   "id": "preferita",
   "name": "Gelateria e cioccolateria PREFERITA",
-  "genre": "スイーツ",
+  "genre": "スイーツ・カフェ",
   "catch": "夜22時まで楽しめる本格ジェラート🍨",
   "desc": "濃厚ミルク系から爽やかフルーツ系まで。3種盛りもOK。ディナー後の〆ジェラートに。テイクアウトのみ。",
   "address": "東京都目黒区鷹番2-19-19",
@@ -70,12 +73,13 @@ window.SHOPS = [
   "reels": [
    "DdAsMDxBYT9"
   ],
-  "pr": false
+  "pr": false,
+  "kind": "スイーツ"
  },
  {
   "id": "tsubaki",
   "name": "椿宗善 学芸大店",
-  "genre": "カフェ",
+  "genre": "スイーツ・カフェ",
   "catch": "学芸大学西口にお茶専門店がNEW OPEN✨",
   "desc": "イチオシは琥珀ほうじ茶🍵 試飲もできて、お気に入りが見つかる。",
   "address": "東京都目黒区鷹番3丁目15-21",
@@ -87,12 +91,13 @@ window.SHOPS = [
   "pr": true,
   "reels": [
    "Dc2SLf5BZug"
-  ]
+  ],
+  "kind": "カフェ"
  },
  {
   "id": "san",
   "name": "にんにく鶏焼肉サン 学芸大学店",
-  "genre": "焼肉・ホルモン",
+  "genre": "和食",
   "catch": "焼きと鍋を同時に楽しむ新感覚の鶏焼肉💖",
   "desc": "鉄板で焼いた鶏の旨みが鍋に流れ込み、その出汁で〆のラーメンまで。",
   "address": "東京都目黒区鷹番2-20-9 檜ビル1F",
@@ -104,12 +109,13 @@ window.SHOPS = [
   "pr": true,
   "reels": [
    "DbxdFFJhni6"
-  ]
+  ],
+  "kind": "焼肉・ホルモン"
  },
  {
   "id": "hitorijime",
   "name": "古民家食堂 ひとり〆",
-  "genre": "居酒屋",
+  "genre": "和食",
   "catch": "築86年の古民家をリノベーション🏮",
   "desc": "懐かしくて落ち着く空間が魅力の古民家食堂。予約可。",
   "address": "東京都目黒区祐天寺2-8-12",
@@ -123,12 +129,13 @@ window.SHOPS = [
   "reels": [
    "Dbr7QfnBZKQ"
   ],
-  "pr": false
+  "pr": false,
+  "kind": "居酒屋"
  },
  {
   "id": "sanya",
   "name": "SANYA",
-  "genre": "居酒屋",
+  "genre": "和食",
   "catch": "祐天寺で話題の炭火焼き居酒屋🏮",
   "desc": "毎朝仕入れる新鮮な豚レバーを炭火で焼く「極みレバー串」が名物。",
   "address": "東京都目黒区祐天寺1-22-7",
@@ -143,12 +150,13 @@ window.SHOPS = [
    "Dbm4tYlhp9I",
    "DVnzeU-AdVo"
   ],
-  "pr": false
+  "pr": false,
+  "kind": "居酒屋"
  },
  {
   "id": "overwhelm",
   "name": "OVERWHELM HAMBURGER & BAR STAND",
-  "genre": "ハンバーガー",
+  "genre": "洋食",
   "catch": "2026年百名店に選ばれた話題のバーガー🍔",
   "desc": "肉好きなら一度は食べたい本格アメリカンバーガー。",
   "address": "東京都目黒区中央町1丁目16-14",
@@ -160,11 +168,12 @@ window.SHOPS = [
   "reels": [
    "DbewDelhNs-"
   ],
-  "pr": false
+  "pr": false,
+  "kind": "ハンバーガー"
  },
  {
   "name": "トモリバ",
-  "genre": "居酒屋",
+  "genre": "和食",
   "catch": "スタッフさんの接客も心地よい、「また来たい」と思える居酒屋🍶",
   "access": "学芸大学駅 徒歩約4分",
   "address": "東京都目黒区鷹番2-20-19",
@@ -178,11 +187,12 @@ window.SHOPS = [
   "area": "",
   "hours": "17:00〜24:00",
   "budget": "4,000円〜",
-  "id": "s10"
+  "id": "s10",
+  "kind": "居酒屋"
  },
  {
   "name": "西口アオギリ",
-  "genre": "居酒屋",
+  "genre": "和食",
   "catch": "駅から徒歩1分、一度は食べたい居酒屋🤤",
   "access": "学芸大学駅 徒歩約1分",
   "address": "東京都目黒区鷹番3-14-5",
@@ -196,11 +206,12 @@ window.SHOPS = [
   "area": "",
   "hours": "17:00〜 / 不定休",
   "budget": "3,000円〜",
-  "id": "s11"
+  "id": "s11",
+  "kind": "居酒屋"
  },
  {
   "name": "P.S.COFFEE",
-  "genre": "カフェ",
+  "genre": "スイーツ・カフェ",
   "catch": "本格カレーが美味しい。1階はわんちゃん同伴OK🐶",
   "access": "学芸大学駅 東口 徒歩約4分",
   "address": "東京都目黒区鷹番2-4-11",
@@ -214,11 +225,12 @@ window.SHOPS = [
   "area": "",
   "hours": "10:00〜22:00",
   "budget": "1,000〜2,000円",
-  "id": "s12"
+  "id": "s12",
+  "kind": "カフェ"
  },
  {
   "name": "関本恭平",
-  "genre": "焼肉・ホルモン",
+  "genre": "和食",
   "catch": "予約必須の食通が通う穴場の焼肉屋さん",
   "access": "学芸大学駅 徒歩5分",
   "address": "東京都目黒区鷹番3-14-5",
@@ -232,11 +244,12 @@ window.SHOPS = [
   "area": "",
   "hours": "17:00〜25:00",
   "budget": "6,000〜8,000円",
-  "id": "s13"
+  "id": "s13",
+  "kind": "焼肉・ホルモン"
  },
  {
   "name": "コトトイ",
-  "genre": "居酒屋",
+  "genre": "和食",
   "catch": "日本では珍しいおばんざいメインの酒場💖",
   "access": "祐天寺駅から徒歩6分",
   "address": "東京都目黒区五本木2-15-3",
@@ -249,11 +262,12 @@ window.SHOPS = [
   "pr": false,
   "area": "祐天寺",
   "hours": "月〜土 17:00〜24:00 / 日 15:00〜22:00 / 不定休",
-  "id": "s14"
+  "id": "s14",
+  "kind": "居酒屋"
  },
  {
   "name": "TUTU",
-  "genre": "カフェ",
+  "genre": "スイーツ・カフェ",
   "catch": "パリの気分を味わえるおしゃれカフェ💖",
   "access": "学芸大学駅から徒歩3分",
   "address": "東京都目黒区鷹番3-4-25",
@@ -266,11 +280,12 @@ window.SHOPS = [
   "pr": false,
   "area": "",
   "hours": "11:00〜15:00 / 17:30〜20:00",
-  "id": "s15"
+  "id": "s15",
+  "kind": "カフェ"
  },
  {
   "name": "MAISON FARMER NAGISA AOKI",
-  "genre": "スイーツ",
+  "genre": "スイーツ・カフェ",
   "catch": "季節の食材を使った珍しいフレーバーのジェラート🍨（5/23オープン）",
   "access": "学芸大学駅から徒歩2分",
   "address": "東京都目黒区鷹番3-15-18",
@@ -283,11 +298,12 @@ window.SHOPS = [
   "pr": false,
   "area": "",
   "hours": "12:00〜20:00 / 水曜定休",
-  "id": "s16"
+  "id": "s16",
+  "kind": "スイーツ"
  },
  {
   "name": "蕎麦 from TOKYO",
-  "genre": "麺類",
+  "genre": "和食",
   "catch": "祐天寺駅から徒歩1分の好立地のおそば屋さん✨",
   "access": "祐天寺駅から徒歩1分",
   "address": "東京都目黒区祐天寺2-3-14",
@@ -300,11 +316,12 @@ window.SHOPS = [
   "pr": true,
   "area": "祐天寺",
   "hours": "11:00〜23:00",
-  "id": "s17"
+  "id": "s17",
+  "kind": "麺類"
  },
  {
   "name": "BLOOM.by SWELL COFFEE ROASTERS",
-  "genre": "カフェ",
+  "genre": "スイーツ・カフェ",
   "catch": "日本1のバリスタがいるカフェ👀",
   "access": "学芸大学駅から徒歩5分",
   "address": "東京都目黒区碑文谷6-6-12",
@@ -318,11 +335,12 @@ window.SHOPS = [
   "pr": true,
   "area": "碑文谷",
   "hours": "9:00〜18:00",
-  "id": "s18"
+  "id": "s18",
+  "kind": "カフェ"
  },
  {
   "name": "花たこ",
-  "genre": "たこ焼き・粉もの",
+  "genre": "和食",
   "catch": "250円でこのクオリティは高すぎた👀",
   "access": "学芸大学駅から徒歩1分",
   "address": "東京都目黒区鷹番3-7-13",
@@ -335,11 +353,12 @@ window.SHOPS = [
   "pr": false,
   "area": "",
   "hours": "11:00〜2:00",
-  "id": "s19"
+  "id": "s19",
+  "kind": "たこ焼き・粉もの"
  },
  {
   "name": "だしともんじゃ",
-  "genre": "たこ焼き・粉もの",
+  "genre": "和食",
   "catch": "鳥羽シェフ監修のもんじゃ👀",
   "access": "学芸大学駅から徒歩30秒",
   "address": "東京都目黒区鷹番3-8-3",
@@ -351,11 +370,12 @@ window.SHOPS = [
   "date": "2026-05-03",
   "pr": false,
   "area": "",
-  "id": "s20"
+  "id": "s20",
+  "kind": "たこ焼き・粉もの"
  },
  {
   "name": "酒場 鳩乃湯 学芸大学店",
-  "genre": "居酒屋",
+  "genre": "和食",
   "catch": "常にお客さんでいっぱいの大人気酒場💖",
   "access": "学芸大学駅から徒歩2分",
   "address": "東京都目黒区鷹番3-8-15",
@@ -367,11 +387,12 @@ window.SHOPS = [
   "date": "2026-05-01",
   "pr": false,
   "area": "",
-  "id": "s21"
+  "id": "s21",
+  "kind": "居酒屋"
  },
  {
   "name": "茶割",
-  "genre": "居酒屋",
+  "genre": "和食",
   "catch": "100種類のお茶割りと唐揚げがあってとっても楽しい！",
   "access": "学芸大学駅から徒歩2分",
   "address": "東京都目黒区鷹番2-20-19",
@@ -383,11 +404,12 @@ window.SHOPS = [
   "date": "2026-04-27",
   "pr": false,
   "area": "",
-  "id": "s22"
+  "id": "s22",
+  "kind": "居酒屋"
  },
  {
   "name": "モダン酒場 KANPAI",
-  "genre": "居酒屋",
+  "genre": "和食",
   "catch": "海鮮好きが沼る酒場💖",
   "access": "学芸大学駅から徒歩3分",
   "address": "東京都目黒区鷹番2-20-5",
@@ -399,11 +421,12 @@ window.SHOPS = [
   "date": "2026-04-18",
   "pr": true,
   "area": "",
-  "id": "s23"
+  "id": "s23",
+  "kind": "居酒屋"
  },
  {
   "name": "コーヨーハイツ",
-  "genre": "居酒屋",
+  "genre": "和食",
   "catch": "路地裏に佇む隠れ家酒場💖 お店の雰囲気も店員さんも最高",
   "access": "学芸大学駅から徒歩2分",
   "address": "東京都目黒区鷹番3-7-13",
@@ -416,11 +439,12 @@ window.SHOPS = [
   "date": "2026-04-17",
   "pr": false,
   "area": "",
-  "id": "s24"
+  "id": "s24",
+  "kind": "居酒屋"
  },
  {
   "name": "寿司 潮騒",
-  "genre": "寿司",
+  "genre": "和食",
   "catch": "足元に水槽があって驚き👀✨",
   "access": "学芸大学駅から徒歩30秒",
   "address": "東京都目黒区鷹番3-1-4",
@@ -432,11 +456,12 @@ window.SHOPS = [
   "date": "2026-04-12",
   "pr": false,
   "area": "",
-  "id": "s25"
+  "id": "s25",
+  "kind": "寿司"
  },
  {
   "name": "大衆酒場 レインカラー",
-  "genre": "居酒屋",
+  "genre": "和食",
   "catch": "名前のセンス抜群な大衆酒場🍻",
   "access": "学芸大学駅から徒歩30秒",
   "address": "東京都目黒区鷹番3-7-13",
@@ -448,11 +473,12 @@ window.SHOPS = [
   "date": "2026-04-10",
   "pr": false,
   "area": "",
-  "id": "s26"
+  "id": "s26",
+  "kind": "居酒屋"
  },
  {
   "name": "学大居酒屋 nicome",
-  "genre": "居酒屋",
+  "genre": "和食",
   "catch": "学大1の映え酒場✨",
   "access": "学芸大学駅から徒歩1分",
   "address": "東京都目黒区鷹番2-19-22",
@@ -464,11 +490,12 @@ window.SHOPS = [
   "date": "2026-04-06",
   "pr": false,
   "area": "",
-  "id": "s27"
+  "id": "s27",
+  "kind": "居酒屋"
  },
  {
   "name": "警視鳥",
-  "genre": "焼鳥",
+  "genre": "和食",
   "catch": "平日でも満席な大人気酒場💖",
   "access": "学芸大学駅から徒歩3分",
   "address": "東京都目黒区鷹番3-18-21",
@@ -480,11 +507,12 @@ window.SHOPS = [
   "date": "2026-04-01",
   "pr": false,
   "area": "",
-  "id": "s28"
+  "id": "s28",
+  "kind": "焼鳥"
  },
  {
   "name": "びゃく",
-  "genre": "居酒屋",
+  "genre": "和食",
   "catch": "味も雰囲気も最高でデートに最適💖",
   "access": "学芸大学駅から徒歩1分",
   "address": "東京都目黒区鷹番3-8-10",
@@ -496,11 +524,12 @@ window.SHOPS = [
   "date": "2026-03-30",
   "pr": false,
   "area": "",
-  "id": "s29"
+  "id": "s29",
+  "kind": "居酒屋"
  },
  {
   "name": "ホドケバ",
-  "genre": "居酒屋",
+  "genre": "和食",
   "catch": "5周年を迎えた激イケ酒場",
   "access": "学芸大学駅から徒歩40秒",
   "address": "東京都目黒区鷹番3-3-19",
@@ -512,11 +541,12 @@ window.SHOPS = [
   "date": "2026-03-26",
   "pr": false,
   "area": "",
-  "id": "s30"
+  "id": "s30",
+  "kind": "居酒屋"
  },
  {
   "name": "目黒 三谷",
-  "genre": "焼鳥",
+  "genre": "和食",
   "catch": "人生で1度はいきたい…何度もリピートしている大好きなお店💖",
   "access": "学芸大学駅から徒歩1分",
   "address": "東京都目黒区鷹番3-14-6",
@@ -529,11 +559,12 @@ window.SHOPS = [
   "date": "2026-03-24",
   "pr": false,
   "area": "",
-  "id": "s31"
+  "id": "s31",
+  "kind": "焼鳥"
  },
  {
   "name": "塩ホルモン やけん",
-  "genre": "焼肉・ホルモン",
+  "genre": "和食",
   "catch": "ホルモン好きが生まれる隠れ家酒場🍻",
   "access": "学芸大学駅から徒歩3分",
   "address": "東京都目黒区中央町2丁目37-2",
@@ -545,11 +576,12 @@ window.SHOPS = [
   "date": "2026-03-22",
   "pr": true,
   "area": "",
-  "id": "s32"
+  "id": "s32",
+  "kind": "焼肉・ホルモン"
  },
  {
   "name": "野菜巻き串 薄田商店",
-  "genre": "居酒屋",
+  "genre": "和食",
   "catch": "新鮮な野菜を使ったヘルシーな野菜巻き串💖",
   "access": "学芸大学駅から徒歩30秒",
   "address": "東京都目黒区鷹番3-3-16",
@@ -561,11 +593,12 @@ window.SHOPS = [
   "date": "2026-03-20",
   "pr": false,
   "area": "",
-  "id": "s33"
+  "id": "s33",
+  "kind": "居酒屋"
  },
  {
   "name": "味な店 マンパイン",
-  "genre": "居酒屋",
+  "genre": "和食",
   "catch": "ネオ居酒屋しってる？👀",
   "access": "学芸大学駅から徒歩2分",
   "address": "東京都目黒区鷹番2-20-4",
@@ -577,11 +610,12 @@ window.SHOPS = [
   "date": "2026-03-12",
   "pr": false,
   "area": "",
-  "id": "s34"
+  "id": "s34",
+  "kind": "居酒屋"
  },
  {
   "name": "ワンコイン割烹魚金 学芸大学",
-  "genre": "居酒屋",
+  "genre": "和食",
   "catch": "お酒もお料理も全てワンコイン👀",
   "access": "学芸大学駅から徒歩30秒",
   "address": "東京都目黒区鷹番3-3-16",
@@ -593,11 +627,12 @@ window.SHOPS = [
   "date": "2026-03-06",
   "pr": false,
   "area": "",
-  "id": "s35"
+  "id": "s35",
+  "kind": "居酒屋"
  },
  {
   "name": "焼鳥やおや HANARE",
-  "genre": "焼鳥",
+  "genre": "和食",
   "catch": "半地下空間にお洒落な焼鳥酒場が💖",
   "access": "学芸大学駅から徒歩1分",
   "address": "東京都目黒区鷹番3-3-12 B1F",
@@ -609,11 +644,12 @@ window.SHOPS = [
   "date": "2026-03-01",
   "pr": false,
   "area": "",
-  "id": "s36"
+  "id": "s36",
+  "kind": "焼鳥"
  },
  {
   "name": "24 Sweets shop",
-  "genre": "スイーツ",
+  "genre": "スイーツ・カフェ",
   "catch": "24時間営業だからついつい寄っちゃう💖",
   "access": "学芸大学駅から徒歩10秒",
   "address": "東京都目黒区鷹番3-6-1",
@@ -626,11 +662,12 @@ window.SHOPS = [
   "pr": false,
   "area": "",
   "hours": "24時間",
-  "id": "s37"
+  "id": "s37",
+  "kind": "スイーツ"
  },
  {
   "name": "麺也 時しらず 学芸大学店",
-  "genre": "麺類",
+  "genre": "和食",
   "catch": "わかめ好き必見👀✨",
   "access": "学芸大学駅から徒歩3分",
   "address": "東京都目黒区鷹番3-14-6",
@@ -642,11 +679,12 @@ window.SHOPS = [
   "date": "2026-02-25",
   "pr": false,
   "area": "",
-  "id": "s38"
+  "id": "s38",
+  "kind": "麺類"
  },
  {
   "name": "すする 学芸大学",
-  "genre": "麺類",
+  "genre": "和食",
   "catch": "極太の麺がスープに絡んであっという間に完食🥺",
   "access": "学芸大学駅から徒歩2分",
   "address": "東京都目黒区鷹番2-15-14",
@@ -659,7 +697,8 @@ window.SHOPS = [
   "pr": false,
   "area": "",
   "hours": "11:30〜23:15",
-  "id": "s39"
+  "id": "s39",
+  "kind": "麺類"
  },
  {
   "name": "華空間",
@@ -676,11 +715,12 @@ window.SHOPS = [
   "pr": false,
   "area": "柿の木坂",
   "hours": "11:00〜15:00 / 17:00〜23:00（日祝は22:00まで）/ 月曜定休",
-  "id": "s40"
+  "id": "s40",
+  "kind": "中華"
  },
  {
   "name": "囲炉裏バル カルボ",
-  "genre": "居酒屋",
+  "genre": "和食",
   "catch": "鮮魚のパリパリ包み揚げは新食感💖",
   "access": "学芸大学駅から徒歩2分",
   "address": "東京都目黒区鷹番3-7-13 ホワイトウエル鷹番 2F",
@@ -692,11 +732,12 @@ window.SHOPS = [
   "date": "2026-01-26",
   "pr": false,
   "area": "",
-  "id": "s41"
+  "id": "s41",
+  "kind": "居酒屋"
  },
  {
   "name": "東京鶏焼肉とおでん はーばーど",
-  "genre": "焼鳥",
+  "genre": "和食",
   "catch": "串に刺さない珍しい焼鶏屋さん👀✨",
   "access": "学芸大学駅から徒歩1分",
   "address": "東京都目黒区鷹番3-8-11",
@@ -708,11 +749,12 @@ window.SHOPS = [
   "date": "2026-01-19",
   "pr": false,
   "area": "",
-  "id": "s42"
+  "id": "s42",
+  "kind": "焼鳥"
  },
  {
   "name": "サンヤ",
-  "genre": "居酒屋",
+  "genre": "和食",
   "catch": "ずーーーっと行ってみたかった立ち飲み居酒屋🫶",
   "access": "学芸大学駅から徒歩2分",
   "address": "東京都目黒区鷹番3-14-6",
@@ -724,11 +766,12 @@ window.SHOPS = [
   "date": "2026-01-16",
   "pr": false,
   "area": "",
-  "id": "s43"
+  "id": "s43",
+  "kind": "居酒屋"
  },
  {
   "name": "黒澤惣三商店",
-  "genre": "焼鳥",
+  "genre": "和食",
   "catch": "焼き鳥好きは沼る…🥺",
   "access": "学芸大学駅から徒歩3分",
   "address": "東京都目黒区鷹番3-19-7",
@@ -740,11 +783,12 @@ window.SHOPS = [
   "date": "2026-01-14",
   "pr": false,
   "area": "",
-  "id": "s44"
+  "id": "s44",
+  "kind": "焼鳥"
  },
  {
   "name": "ファクトリー&ラボ 神乃珈琲",
-  "genre": "カフェ",
+  "genre": "スイーツ・カフェ",
   "catch": "開放感抜群な店内でいただくプリンが最高🍮",
   "access": "学芸大学駅から徒歩10分",
   "address": "東京都目黒区中央町1-4-14",
@@ -756,6 +800,7 @@ window.SHOPS = [
   "date": "2026-01-05",
   "pr": false,
   "area": "",
-  "id": "s45"
+  "id": "s45",
+  "kind": "カフェ"
  }
 ];
