@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>学大グルメマップ｜よこぴ</title>
+<meta name="description" content="よこぴ|学芸大学グルメが実際に行ったお店を地図で。ピンをタップすると動画が見られます。">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.css">
+<style>
+  :root{
+    --pink:#ff5d9e; --pink-d:#e23b83; --pink-l:#ffe3ee; --bg:#fff8fb; --ink:#3a2a31; --sub:#8a7480; --line:#f3d5e1;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;color:var(--ink);background:var(--bg)}
+  .app{display:grid;grid-template-columns:400px 1fr;height:100vh;height:100dvh}
+  .panel{display:flex;flex-direction:column;min-height:0;background:#fff;border-right:1px solid var(--line)}
+  header{padding:16px 18px 12px;background:linear-gradient(135deg,#ff8ab8,#ff5d9e);color:#fff}
+  header h1{margin:0;font-size:20px;letter-spacing:.02em}
+  header p{margin:4px 0 0;font-size:12.5px;opacity:.95}
+  header a{color:#fff;font-weight:700}
+  .chips{display:flex;gap:6px;overflow-x:auto;padding:10px 14px;border-bottom:1px solid var(--line);scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:none;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:6px 12px;font-size:12.5px;cursor:pointer;font-family:inherit}
+  .chip[aria-pressed=true]{background:var(--pink);border-color:var(--pink);color:#fff}
+  .body{flex:1;overflow-y:auto;min-height:0}
+  .count{padding:10px 18px 4px;font-size:12px;color:var(--sub)}
+  .list{list-style:none;margin:0;padding:0 10px 20px}
+  .item{display:flex;gap:12px;align-items:center;width:100%;text-align:left;border:0;background:none;padding:11px 8px;border-radius:12px;cursor:pointer;font-family:inherit;color:inherit}
+  .item:hover,.item:focus-visible{background:var(--pink-l);outline:none}
+  .num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--pink);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700}
+  .item b{display:block;font-size:14.5px;line-height:1.35}
+  .item small{display:block;color:var(--sub);font-size:12px;margin-top:2px}
+  .tag{display:inline-block;font-size:10.5px;background:var(--pink-l);color:var(--pink-d);border-radius:6px;padding:1px 6px;margin-right:5px;vertical-align:1px}
+  .detail{padding:14px 18px 28px}
+  .back{border:0;background:none;color:var(--pink-d);font-weight:700;font-size:13px;cursor:pointer;padding:4px 0;font-family:inherit}
+  .detail h2{margin:6px 0 2px;font-size:19px;line-height:1.35}
+  .detail .catch{margin:0 0 12px;color:var(--pink-d);font-weight:600;font-size:14px}
+  .video{width:100%;max-width:360px;margin:0 auto 14px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fafafa;position:relative}
+  .video iframe{display:block;width:100%;height:560px;border:0}
+  .video .fallback{padding:40px 16px;text-align:center;font-size:13px;color:var(--sub)}
+  .desc{font-size:14px;line-height:1.75;margin:0 0 12px}
+  dl{margin:0;font-size:13px}
+  dl div{display:flex;gap:10px;padding:7px 0;border-top:1px solid var(--line)}
+  dt{flex:none;width:64px;color:var(--sub)}
+  dd{margin:0;line-height:1.5}
+  .btns{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+  .btn{flex:1;min-width:140px;text-align:center;text-decoration:none;font-size:13px;font-weight:700;padding:11px 10px;border-radius:12px;border:1px solid var(--pink);color:var(--pink-d);background:#fff}
+  .btn.primary{background:var(--pink);color:#fff}
+  .note{font-size:11px;color:var(--sub);margin-top:14px;line-height:1.6}
+  #map{height:100%;width:100%}
+  .pin{width:32px;height:32px;border-radius:50% 50% 50% 0;background:var(--pink);transform:rotate(-45deg);border:2.5px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.3);display:grid;place-items:center}
+  .pin span{transform:rotate(45deg);color:#fff;font-weight:700;font-size:13px}
+  .pin.active{background:var(--pink-d);box-shadow:0 0 0 4px rgba(255,93,158,.35),0 2px 6px rgba(0,0,0,.3)}
+  .marker-cluster div{background:var(--pink);color:#fff;font-weight:700;font-family:inherit;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.3)}
+  .marker-cluster{background:rgba(255,93,158,.3)}
+  .vtabs{display:flex;gap:6px;justify-content:center;margin:0 0 8px}
+  .vtab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 12px;font-size:12px;cursor:pointer;font-family:inherit;color:var(--ink)}
+  .vtab[aria-pressed=true]{background:var(--pink);border-color:var(--pink);color:#fff}
+  .leaflet-tooltip{font-family:inherit;font-weight:600;border-radius:8px}
+  @media (max-width:820px){
+    .app{grid-template-columns:1fr;grid-template-rows:46vh 1fr}
+    #map{order:-1}
+    .panel{border-right:0;border-top:1px solid var(--line)}
+    .video iframe{height:520px}
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="panel">
+    <header>
+      <h1>🗺 学大グルメマップ</h1>
+      <p>よこぴが実際に行ったお店。ピンをタップすると<b>動画</b>が見られます💖<br>
+      <a href="https://www.instagram.com/yokopi_gourmet_/" target="_blank" rel="noopener">@yokopi_gourmet_</a></p>
+    </header>
+    <div class="chips" id="chips" role="group" aria-label="ジャンルで絞り込み"></div>
+    <div class="body" id="body"></div>
+  </aside>
+  <div id="map" aria-label="地図"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js"></script>
+<script src="shops.js"></script>
+<script>
+(function(){
+  const SHOPS = window.SHOPS.slice().sort((a,b)=>a.date<b.date?1:-1);
+  SHOPS.forEach((s,i)=>s.no=i+1);
+  const $ = s=>document.querySelector(s);
+  const esc = t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  const map = L.map('map',{zoomControl:true}).setView([35.6325,139.6885],15);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    maxZoom:19, attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+
+  const cluster = L.markerClusterGroup({maxClusterRadius:38,spiderfyOnMaxZoom:true,showCoverageOnHover:false});
+  map.addLayer(cluster);
+  const markers = {};
+  SHOPS.forEach(s=>{
+    const icon = L.divIcon({className:'',html:`<div class="pin" data-id="${s.id}"><span>${s.no}</span></div>`,iconSize:[32,32],iconAnchor:[16,32]});
+    const m = L.marker([s.lat,s.lng],{icon,title:s.name,keyboard:true});
+    m.bindTooltip(esc(s.name),{direction:'top',offset:[0,-30]});
+    m.on('click',()=>select(s.id,true));
+    markers[s.id]=m;
+  });
+
+  // genre chips
+  const genres = ['すべて', ...Array.from(new Set(SHOPS.map(s=>s.genre)))];
+  let genre = 'すべて', current = null;
+  function renderChips(){
+    $('#chips').innerHTML = genres.map(g=>`<button class="chip" aria-pressed="${g===genre}" data-g="${esc(g)}">${esc(g)}</button>`).join('');
+    $('#chips').querySelectorAll('button').forEach(b=>b.onclick=()=>{genre=b.dataset.g;current=null;renderChips();applyFilter();showList();});
+  }
+  function visible(){return SHOPS.filter(s=>genre==='すべて'||s.genre===genre)}
+  function applyFilter(){
+    const ids = new Set(visible().map(s=>s.id));
+    cluster.clearLayers(); cluster.addLayers(SHOPS.filter(s=>ids.has(s.id)).map(s=>markers[s.id]));
+  }
+  function setActive(id){
+    document.querySelectorAll('.pin').forEach(p=>p.classList.toggle('active',p.dataset.id===id));
+  }
+
+  function showList(){
+    current=null; setActive(null);
+    const v=visible();
+    $('#body').innerHTML = `<div class="count">${v.length}件のお店</div><ul class="list">`+
+      v.map(s=>`<li><button class="item" data-id="${s.id}"><span class="num">${s.no}</span><span><b>${esc(s.name)}</b><small><span class="tag">${esc(s.genre)}</span>${esc(s.catch)}</small></span></button></li>`).join('')+`</ul>`;
+    $('#body').querySelectorAll('.item').forEach(b=>b.onclick=()=>select(b.dataset.id,true));
+    $('#body').scrollTop=0;
+  }
+
+  function select(id,pan){
+    const s = SHOPS.find(x=>x.id===id); if(!s) return;
+    current=id; setActive(id);
+    if(pan){ const m=markers[s.id]; if(cluster.hasLayer(m)) cluster.zoomToShowLayer(m,()=>{map.panTo([s.lat,s.lng]);setActive(id);}); else map.flyTo([s.lat,s.lng],17,{duration:.6}); }
+    const reels = s.reels||[s.reel]; const igOf = i=>`https://www.instagram.com/${/^D(XVUS3|XGz5|WYXh|Xq-O3|d8pT)/.test(reels[i])?'p':'reel'}/${reels[i]}/`; let vi=0;
+    const gm = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s.name+' '+s.address)}`;
+    const rows = [
+      ['住所',s.address],['アクセス',s.access],['営業時間',s.hours],['予算',s.budget],['電話',s.tel&&`<a href="tel:${esc(s.tel)}">${esc(s.tel)}</a>`]
+    ].filter(r=>r[1]).map(r=>`<div><dt>${r[0]}</dt><dd>${r[0]==='電話'?r[1]:esc(r[1])}</dd></div>`).join('');
+    $('#body').innerHTML = `<div class="detail">
+      <button class="back" id="back">← 一覧にもどる</button>
+      <h2>${s.no}. ${esc(s.name)}</h2>
+      <p class="catch">${esc(s.catch)}</p>
+      ${reels.length>1?`<div class="vtabs">${reels.map((_,i)=>`<button class="vtab" data-i="${i}" aria-pressed="${i===0}">動画${i+1}</button>`).join('')}</div>`:''}
+      <div class="video"><iframe id="vf" src="${igOf(0)}embed/" loading="lazy" allowfullscreen title="${esc(s.name)}の動画"></iframe></div>
+      ${s.desc?`<p class="desc">${esc(s.desc)}</p>`:''}
+      <dl>${rows}</dl>
+      <div class="btns">
+        <a class="btn primary" id="igl" href="${igOf(0)}" target="_blank" rel="noopener">Instagramで見る</a>
+        <a class="btn" href="${gm}" target="_blank" rel="noopener">Googleマップで開く</a>
+      </div>
+      <p class="note">${s.pr?'※この投稿はPRです。':''}※訪問時の情報です。営業時間・定休日は変更になる場合があります。最新情報は店舗へご確認ください。</p>
+    </div>`;
+    $('#back').onclick=showList;
+    document.querySelectorAll('.vtab').forEach(b=>b.onclick=()=>{vi=+b.dataset.i;document.querySelectorAll('.vtab').forEach(x=>x.setAttribute('aria-pressed',x===b));$('#vf').src=igOf(vi)+'embed/';$('#igl').href=igOf(vi);});
+    $('#body').scrollTop=0;
+    if(window.matchMedia('(max-width:820px)').matches) $('.panel').scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+
+  renderChips(); applyFilter(); showList();
+  map.fitBounds(L.latLngBounds(SHOPS.map(s=>[s.lat,s.lng])).pad(0.1));
+  const hash = location.hash.slice(1); if(hash) select(hash,true);
+})();
+</script>
+</body>
+</html>
